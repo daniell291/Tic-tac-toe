@@ -149,3 +149,5 @@ void gameReset(char *spaces, bool *running){
     *running=true;
     drawBoard(spaces);
 }
+
+//made by Daniell291 november 7th 2026
