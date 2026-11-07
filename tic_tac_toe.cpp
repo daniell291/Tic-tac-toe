@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <limits>
+#include <cstdlib>
 
 void drawBoard(char *spaces);
 void playerMove(char *spaces, char player);
@@ -56,7 +57,12 @@ int main() {
 }
 
 void drawBoard(char *spaces){
-    std::cout << "\033[2J\033[3J\033[H";
+    #ifdef _WIN32
+        std::system("cls");
+    #else
+        std::system("clear");
+    #endif
+
     std::cout << '\n';
     std::cout << "     |     |     " << '\n';
     std::cout << "  " << spaces[0] << "  |  " << spaces[1] << "  |  " << spaces[2] << "  " << '\n';
